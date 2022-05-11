@@ -109,3 +109,4 @@ for python to install our package.
       install:
         - method: pip
           path: .
+        - requirements: docs/requirements.txt
