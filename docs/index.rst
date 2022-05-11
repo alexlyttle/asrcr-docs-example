@@ -91,6 +91,11 @@ This theme allows you to add hyperlinks to the source repository and more.
 Publish
 -------
 
+You can publish the documentation to a `GitHub Pages <https://pages.github.com/>`_,
+but this tutorial will show you how to use `Read the Docs <https://readthedocs.org/>`_.
+
+
+
 
 
 Indices and tables

@@ -1,1 +1,2 @@
-sphin
+sphinx
+sphinx_book_theme
