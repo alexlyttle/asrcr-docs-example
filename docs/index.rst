@@ -3,16 +3,34 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to my example documentation!
-============================================
+ASR Code Review - Documentation
+===============================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+   
+   publish
+   adding-code
+   api-generation
+   better-docstrings
+   extras
+   api
 
 
 Getting started
----------------
+===============
+
+So you want to build some documentation for your project. Follow this
+guide to get started.
+
+Setup project
+-------------
+
+.. note::
+   
+   If you are already working on a project, you may start at 
+   step 3 after navigating to your project directory.
 
 1. Create an empty repository (e.g. using GitHub, GitLab, or Bitbucket)
 
@@ -62,16 +80,11 @@ Getting started
 
 You now have a working Sphinx project!
 
-Configuration
--------------
-
-Sphinx features several options and extensions that can be configured.
-
 Theme
-^^^^^
+-----
 
 Sphinx comes with `builtin themes <https://www.sphinx-doc.org/en/master/usage/theming.html>`_.
-This documentation uses the `Sphinx Book Theme <https://sphinx-book-theme.readthedocs.io/en/stable/>`_
+This documentation uses the `Sphinx Book Theme <https://sphinx-book-theme.readthedocs.io/en/stable/>`_.
 
 1. Add the theme to the requirements and install it,
 
@@ -88,34 +101,25 @@ This documentation uses the `Sphinx Book Theme <https://sphinx-book-theme.readth
 
 This theme allows you to add hyperlinks to the source repository and more.
 
-Publish
--------
+Adding a new page
+-----------------
 
-You can publish the documentation to a `GitHub Pages <https://pages.github.com/>`_,
-but this tutorial will show you how to use `Read the Docs <https://readthedocs.org/>`_.
+Let's add a new page to our documentation.
 
-Ensure that your project has a ``docs/requirements.txt`` file with all
-Python packages needed to build the documentation. Optionally, add
-`configuration options <https://docs.readthedocs.io/en/stable/config-file/index.html>`_ 
-to the file ``.readthedocs.yaml``.
+.. code-block::
 
-1. Go to `readthedocs.org <https://readthedocs.org/>`_ and sign in or make an acount
+   cd docs
+   echo "Publishing documentation\n========================" > publish.rst
 
-2. Go to your `Dashboard <https://readthedocs.org/dashboard/>`_ and Import a Project
+Now, add the new page to the table of contents at the top of ``index.rst``.
 
-3. To `Import Manually <https://docs.readthedocs.io/en/stable/intro/import-guide.html#manually-import-your-docs>`_,
-   enter your project details into the form
-
-Or,
-
-3. Go to `Connected Services <https://readthedocs.org/accounts/social/connections/>`_ and connect your
-   GitHub, GitLab, or Bitbucket account
-
-4. Find your repository and click the plus icon
-
-You should now be able to view your documentation live on the internet!
-It will update every time you push to the specified branch, so ensure
-that your documentation compiles correctly before publishing.
+.. code-block:: rst
+   
+   .. toctree::
+      :maxdepth: 2
+      :caption: Contents:
+      
+      publish  .. <-- add pages here
 
 Indices and tables
 ==================
