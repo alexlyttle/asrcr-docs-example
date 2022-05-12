@@ -8,4 +8,4 @@ wordie
    :maxdepth: 2
    :caption: Submodules
 
-   wordie.letters
+   wordie/letters

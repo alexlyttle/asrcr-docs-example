@@ -3,6 +3,6 @@ API
 
 .. toctree::
    :maxdepth: 2
-   :caption: Packages:
+   :caption: Packages
 
-   wordie
+   api/wordie
