@@ -13,14 +13,14 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-
+from wordie import __version__
 
 # -- Project information -----------------------------------------------------
 
 project = 'asrcr-docs-example'
 copyright = '2022, Alex Lyttle'
 author = 'Alex Lyttle'
-
+release = __version__
 
 # -- General configuration ---------------------------------------------------
 
