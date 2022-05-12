@@ -12,6 +12,11 @@ Sphinx has tools for automatically generating API documentation. One
 example of this is the ``autodoc`` extension. Here is an example for
 how to use it.
 
+.. note::
+   
+   You will need to write docstrings in reStructuredText format, or see
+   the next chapter for how to use the ``napoleon`` extension.
+
 Add the following extensions to ``docs/conf.py``.
 
 .. code-block:: python
@@ -57,16 +62,16 @@ each package, subpackage, and submodule, create a new RST file.
     <your-package>
     ==============
 
+    .. automodule:: <your-package>
+       :members:
+
     .. toctree::
        :caption: Submodules:
 
        <your-package>.<your-submodule>
 
-    .. automodule:: <your-package>
-       :members:
-
 Here, we create a TOC for any submodules in the package (you may
-create a separate TOC for subpackages etc.) and then follow it with
+create a separate TOC for subpackages etc.) and and precede it with
 ``.. automodule::`` to generate documentation for
 ``<your-package>/__init__.py``.
 
@@ -87,10 +92,67 @@ Then, clean and build the documentation,
 
    make clean; make html
 
-Sphinx will automatically import your package(s) and create documentation
-from the docstrings.
+However, you may see the following warning:
 
-.. note::
-   
-   You will need to write docstrings in reStructuredText format, or see
-   the next chapter.
+.. code-block::
+
+   WARNING: autodoc: failed to import module '<your-package>'; the following exception was raised:
+   No module named '<your-package>'
+   WARNING: autodoc: failed to import module '<your-submodule>' from module '<your-package>'; the following exception was raised:
+   No module named '<your-package>'
+
+This is because you need to :ref:`install your code locally <locally>` for
+``autodoc`` to work. Even if you don't see this warning, you need to
+:ref:`tell Readthedocs to install your code <readthedocs>` before compiling the
+documentation.
+
+Install your code
+-----------------
+
+.. _locally:
+
+Locally
+^^^^^^^
+
+Your code should be installed in your environment to generate the docs.
+If you haven't already, install it by going to the project directory
+and running,
+
+.. code-block::
+
+    pip install .
+
+You will also need to add a few more files to ``.gitignore``,
+
+.. code-block::
+    :caption: .gitignore
+    
+    __pycache__/
+    *.egg-info
+
+.. _readthedocs:
+
+Readthedocs
+^^^^^^^^^^^
+
+Readthedocs also needs to know to install your code. Create a file
+named ``.readthedocs.yaml`` in the root of your project. This example
+configures the documentation to build on Ubuntu with Python 3.9 and
+for python to install our package.
+
+.. code-block:: yaml
+    :caption: .readthedocs.yaml
+
+    version: 2
+
+    build:
+      os: "ubuntu-20.04"
+      tools:
+        python: "3.9"
+
+    python:
+    # Install our python package before building the docs
+      install:
+        - method: pip
+          path: .
+        - requirements: docs/requirements.txt

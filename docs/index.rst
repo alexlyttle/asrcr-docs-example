@@ -6,21 +6,6 @@
 ASR Code Review - Documentation
 ===============================
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-   
-   publish
-   adding-code
-   api-generation
-   better-docstrings
-   extras
-   api
-
-
-Getting started
-===============
-
 So you want to build some documentation for your project. Follow this
 guide to get started.
 
@@ -80,46 +65,17 @@ Setup project
 
 You now have a working Sphinx project!
 
-Theme
------
-
-Sphinx comes with `builtin themes <https://www.sphinx-doc.org/en/master/usage/theming.html>`_.
-This documentation uses the `Sphinx Book Theme <https://sphinx-book-theme.readthedocs.io/en/stable/>`_.
-
-1. Add the theme to the requirements and install it,
-
-   .. code-block::
-
-      echo sphinx-book-theme >> docs/requirements.txt
-      pip install sphinx-book-theme
-
-2. Go to the ``conf.py`` file and add the following lines,
-
-   .. code-block::
-
-      html_theme = 'sphinx_book_theme'
-
-This theme allows you to add hyperlinks to the source repository and more.
-
-Adding a new page
------------------
-
-Let's add a new page to our documentation.
-
-.. code-block::
-
-   cd docs
-   echo "Publishing documentation\n========================" > publish.rst
-
-Now, add the new page to the table of contents at the top of ``index.rst``.
-
-.. code-block:: rst
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
    
-   .. toctree::
-      :maxdepth: 2
-      :caption: Contents:
-      
-      publish  .. <-- add pages here
+   adding-pages
+   publish
+   adding-code
+   api-generation
+   better-docstrings
+   extras
+   api
 
 Indices and tables
 ==================
