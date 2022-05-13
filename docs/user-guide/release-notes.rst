@@ -6,7 +6,7 @@ The release notes document changes to the codebase and documentation.
 wordie 0.1.0
 ------------
 
-*05 May 2022*
+*13 May 2022*
 
 First minor release of the example Python project ``wordie`` and its
 accompanying documentation tutorial.
