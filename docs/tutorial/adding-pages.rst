@@ -68,8 +68,46 @@ you may underline the headings like so,
 Lists
 -----
 
+Lists can be, e.g. numbered,::
+
+   1. First item
+   2. Second item
+   3. Third item
+
+autonumbered,::
+
+   #. First item
+   #. Second item
+   #. Third item
+
+or bullets,::
+
+   * First item
+   * Second item
+   * Third item
+
 Code blocks
 -----------
+
+Code blocks may be written with syntax highlighting like so,
+
+.. code-block:: rst
+   
+   .. code-block:: python
+      :caption: hello-world.py
+      :linenos:
+      
+      # print "Hello world!"
+      print("Hello world!")
+
+which renders as,
+
+.. code-block:: python
+   :caption: hello-world.py
+   :linenos:
+   
+   # print "Hello world!"
+   print("Hello world")
 
 Example
 -------
