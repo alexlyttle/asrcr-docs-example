@@ -1,7 +1,7 @@
 Publishing documentation
 ========================
 
-You can publish the documentation to a `GitHub Pages <https://pages.github.com/>`_,
+You can publish the documentation to `GitHub Pages <https://pages.github.com/>`_,
 but this tutorial will show you how to use `Read the Docs <https://readthedocs.org/>`_.
 
 Readthedocs
