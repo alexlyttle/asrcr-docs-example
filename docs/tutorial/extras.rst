@@ -7,7 +7,7 @@ Theme
 -----
 
 Sphinx comes with `builtin themes <https://www.sphinx-doc.org/en/master/usage/theming.html>`_.
-This documentation uses the `Sphinx Book Theme <https://sphinx-book-theme.readthedocs.io/en/stable/>`_.
+However, this documentation uses the third-party `Sphinx Book Theme <https://sphinx-book-theme.readthedocs.io/en/stable/>`_.
 
 1. Add the theme to the requirements and install it,
 
@@ -40,6 +40,14 @@ Render math using the ``mathjax`` extension.
 
 Here is an example,
 
+.. code-block:: reStructuredText
+
+    .. math::
+
+        f(x) = \int_0^\infty x^2 \, dx
+
+which renders as,
+
 .. math::
 
     f(x) = \int_0^\infty x^2 \, dx
@@ -47,7 +55,7 @@ Here is an example,
 Generate notebooks
 ------------------
 
-Use the ``nbsphinx`` extension to automatrically generate documentation
+Use the ``nbsphinx`` extension to automatically generate documentation
 from Jupyter notebooks.
 
 Intersphinx
@@ -55,3 +63,23 @@ Intersphinx
 
 Reference external documentation in your docstrings using the
 ``intersphinx`` extension.
+
+Inline tabs
+-----------
+
+The `sphinx-inline-tabs <https://sphinx-inline-tabs.readthedocs.io/en/latest/index.html>`_
+extension allows you to do things like this using the ``.. tab::`` directive,
+
+.. tab:: One
+
+    This is the first tab.
+
+.. tab:: Two
+
+    This is the second tab.
+
+.. tab:: Three
+
+    This is the third tab.
+
+
