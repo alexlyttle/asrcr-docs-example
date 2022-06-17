@@ -35,12 +35,21 @@ guide to get started.
 
 6. Build and preview the documentation locally,
    
-   .. code-block::
+   .. tab:: macOS
 
-      make html
-      open _build/html/index.html
+      .. code-block:: bash
 
-7. Add build directory to gitignore
+         make html
+         open _build/html/index.html
+
+   .. tab:: Linux
+
+      .. code-block:: bash
+
+         make html
+         xdg-open _build/html/index.html
+
+7. Add build directory to gitignore (optional)
    
    .. code-block::
 
